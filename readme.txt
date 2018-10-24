@@ -16,8 +16,9 @@ rpcs.py
 	udostepnia api na danym adresie i porcie obsługujące selenium.
 	przeglądarka kontrolowana przez selenium może być ukryta (standardowo --hide_browser=True), lub można wymusić jej pokazanie (=False)
 	serwer loguje wszelkie wywołania i dane
-	serwer może być zdalny, jak i działać lokalnie (bez różnicy, ta sama idea)
+	serwer może być zdalny, jak i działać lokalnie (bez różnicy, ta sama idea - serwer tworzy socket tcp na danym porcie, do którego klient może się podłączyć i nie ma dla niego znaczenia czy jest to localhost czy serwer w internecie)
 	główna funkcja: udostępnianie publicznych funkcji (u nas "dajdla" w klasie "pogoda"), tak aby każdy klient mógł ją wywołać.
+	Funkcje są niejako "schowane" za interfejsem serwera, klient nie ma tak naprawdę pojęcia co tam się dzieje.
 	serwer rpc (tinyrpc) działa w oparciu o bibliotekę zmq (zeromq, 0mq) która obsługuje funkcje transportowe.
 
 	parametry:
